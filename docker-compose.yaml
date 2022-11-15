@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    postgres:
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=saurabh
+        ports:
+            - "5555:5432"
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+    pgadmin:
+        image: dpage/pgadmin4
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=shailesh2018@gmail.com
+            - PGADMIN_DEFAULT_PASSWORD=omsai@123
+        ports:
+            - "8888:80"
